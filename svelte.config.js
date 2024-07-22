@@ -5,6 +5,9 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
+		alias: {
+			$db: './src/lib/server/db'
+		},
 		adapter: adapter()
 	}
 };
