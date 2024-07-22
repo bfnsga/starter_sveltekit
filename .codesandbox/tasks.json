@@ -1,0 +1,29 @@
+{
+	// These tasks will run in order when initializing your CodeSandbox project.
+	"setupTasks": [
+		{
+			"name": "Install Doppler",
+			"command": "curl -Ls --tlsv1.2 --proto \"=https\" --retry 3 https://cli.doppler.com/install.sh | sudo sh || wget -t 3 -qO- https://cli.doppler.com/install.sh | sudo sh"
+		},
+		{
+			"name": "Install Dependencies",
+			"command": "pnpm install"
+		}
+	],
+
+	// These tasks can be run from CodeSandbox. Running one will open a log in the app.
+	"tasks": {
+		"start": {
+			"name": "dev",
+			"command": "pnpm run dev",
+			"runAtStart": true,
+			"preview": {
+				"port": 5173
+			}
+		},
+		"install": {
+			"name": "install dependencies",
+			"command": "pnpm install"
+		}
+	}
+}
